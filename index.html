@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>ayo</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      background: #f4f4f4;
-    }
-    input, button {
-      padding: 0.6em;
-      font-size: 1em;
-      width: 100%;
-      margin-top: 1em;
-      box-sizing: border-box;
-    }
-    button {
-      cursor: pointer;
-      background-color: #007acc;
-      color: white;
-      border: none;
-    }
-    button:hover {
-      background-color: #005fa3;
-    }
-    #output {
-      margin-top: 1.5em;
-      word-break: break-all;
-      background: white;
-      padding: 1em;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .link-box {
-      margin-top: 1em;
-    }
-    a {
-      display: inline-block;
-      margin-top: 0.5em;
-      color: #007acc;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta description="短縮URL URL Shorter">
+  <title>URL Shortner</title>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <img src="https://github.com/user-attachments/assets/37150915-769b-4586-aa44-e557f3905f19" >
-  <p>①URL入力②生成されたURLにアクセス③Issue発行④Github Actionsから短縮URLが返ってきます</p><br>
-  <p>短縮したいURLを入力してください：</p>
-  <input type="text" id="urlInput" placeholder="例：https://example.com/your-url">
-  <button onclick="generate()">URLを生成してコピー</button>
-
-  <div id="output" style="display: none;">
-    <p><strong>生成されたURL:</strong></p>
-    <input type="text" id="resultUrl" readonly>
-    <div class="link-box">
-      <a id="openLink" href="#" target="_blank">▶ 新しいタブで開く</a>
-    </div>
+  <div class="taskbar">
+      <div onclick="window.location.href='https://l4qzix.f5.si/';"class="start-button">
+        ︎ ︎︎ ︎︎ ︎︎ ︎︎ ︎︎ ︎︎ ︎︎ ︎
+      </div>
+      <div class="taskbar-items">
+          <a href="https://discord.com/users/540151088293085195"style="text-decoration:none;" class="discord">Discord</a> ︎ ︎︎
+          <a href="https://t.me/l4qzix"style="text-decoration:none;"class="telegram">Telegram</a> ︎ ︎︎
+          <a href="https://x.com/l4qzix"style="text-decoration:none;"class="twitter">Twitter</a>
+      </div>
+      <div id="clock" class="clock"></div>
   </div>
+  <div class="window">
+      <div class="title-bar">
+          <span>URL shortener</span>
+          <div>
+              <button class="close">×</button>
+              <button class="minimize">─</button>
+              <button class="maximize">☐</button>
+          </div>
+      </div>
+      <div class="menu-bar">
+          <a href="https://l4qzix.f5.si/about.html" class="aboutme"style="text-decoration:none;">About ︎︎ ︎︎ ︎︎ ︎︎ ︎︎</a>
+          <span>Image</span>
+          <span>View</span>
+          <span>Help</span>
+      </div>
+      <div class="content">
+          <div class="section">
+              <h1>短縮URLサービス</h1>
+              <p>①URL入力②生成されたURLにアクセス③Issue発行④Github Actionsから短縮URLが返ってきます</p><br>
+              <p>短縮したいURLを入力してください：</p>
 
+          </div>
+          <div class="section">
+              <div class="alert">短縮元URL↓</div>
+              <input type="text" id="urlInput" placeholder="例：https://example.com/your-url">
+              <br />
+              <div class="alert">短縮したURL↓</div>
+              <input type="text" readonly class="input" id="shorturl" placeholder="短縮URL">
+              <button onclick="generate()">URLを生成してコピー</button>
+              <div id="output" style="display: none;">
+                <p><strong>生成されたURL:</strong></p>
+                <input type="text" id="resultUrl" readonly>
+                <div class="link-box">
+                  <a id="openLink" href="#" target="_blank">▶ 新しいタブで開く</a>
+                </div>
+              </div>
+          </div>
+      </div>
   <script>
     function generate() {
       const input = document.getElementById("urlInput").value.trim();
@@ -67,7 +67,7 @@
       }
 
       const encoded = encodeURIComponent(input);
-      const githubUrl = `https://github.com/TEPPEKI-Tetsuryokukai/make-url-short-database/issues/new?title=${encoded}`;
+      const githubUrl = `https://github.com/l4qzix/make-url-short-database/issues/new?title=${encoded}`;
 
       // 表示とコピー
       document.getElementById("resultUrl").value = githubUrl;
